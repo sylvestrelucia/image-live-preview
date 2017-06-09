@@ -1,7 +1,6 @@
 <?php
 
-function get_web_page( $url )
-{
+function get_web_page($url) {
     $user_agent='Mozilla/5.0 (Windows NT 6.1; rv:8.0) Gecko/20100101 Firefox/8.0';
 
     $options = array(
@@ -9,8 +8,8 @@ function get_web_page( $url )
         CURLOPT_CUSTOMREQUEST  =>"GET",        //set request type post or get
         CURLOPT_POST           =>false,        //set to GET
         CURLOPT_USERAGENT      => $user_agent, //set user agent
-        CURLOPT_COOKIEFILE     =>"cookie.txt", //set cookie file
-        CURLOPT_COOKIEJAR      =>"cookie.txt", //set cookie jar
+        //CURLOPT_COOKIEFILE     =>"cookie.txt", //set cookie file
+        //CURLOPT_COOKIEJAR      =>"cookie.txt", //set cookie jar
         CURLOPT_RETURNTRANSFER => true,     // return web page
         CURLOPT_HEADER         => false,    // don't return headers
         CURLOPT_FOLLOWLOCATION => true,     // follow redirects
@@ -32,7 +31,7 @@ function get_web_page( $url )
     $header['errno']   = $err;
     $header['errmsg']  = $errmsg;
     $header['content'] = $content;
-    return $header;
+    return $content;
 }
 
 ?>
