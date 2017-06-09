@@ -1,0 +1,32 @@
+body {
+  margin: 0; }
+
+.kvasir {
+  font-family: "Roboto Condensed", sans-serif; }
+
+.m-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: white; }
+
+.o-form {
+  margin: 0; }
+  .o-form--full {
+    width: 100%;
+    height: 100%;
+    display: table;
+    background-color: #23bddc;
+    color: #065160;
+    text-align: center; }
+  .o-form .o-form__center {
+    display: table-cell;
+    vertical-align: middle; }
+  .o-form .o-form__title {
+    line-height: 52px;
+    font-size: 40px; }
+  .o-form .o-form__desc {
+    line-height: 24px;
+    font-size: 16px; }
