@@ -1,0 +1,24 @@
+{
+  "name": "image-live-preview",
+  "version": "1.0.0",
+  "description": "A tool to update image of a website and see a live preview",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sylvestrelucia/image-live-preview.git"
+  },
+  "keywords": [
+    "image",
+    "live",
+    "preview"
+  ],
+  "author": "Sylvestre Lucia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sylvestrelucia/image-live-preview/issues"
+  },
+  "homepage": "https://github.com/sylvestrelucia/image-live-preview#readme"
+}
