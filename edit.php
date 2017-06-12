@@ -32,9 +32,8 @@
     }
 ?>
 
-<div id="wrapper"><input class="js-fileUpload" multiple="multiple" type="file"/>
-    <div class="js-image-holder"></div>
-</div>
+<input class="js-fileUpload" multiple="multiple" type="file"/>
+<div class="js-image-holder"></div>
 
 <script>
     $(document).ready(function() {
