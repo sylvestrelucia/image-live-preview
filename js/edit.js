@@ -44,21 +44,14 @@ $(document).ready(function(){
 	    $(".js-fileUpload").on( "click", function() {
 
 	        var elt = $(this).parents(".js-edit__editor").children("img");
-	        var elt2 = $(this);
-
-	        //elt.empty();
-
+            
 		    $(this).on('change', function() {
-
-			    //$(elt).empty();
 
 			    //Get count of selected files
 			    var countFiles = $(this)[0].files.length;
 			    var imgPath = $(this)[0].value;
 			    var extn = imgPath.substring(imgPath.lastIndexOf('.') + 1).toLowerCase();
-			    //var image_holder = $(".js-image-holder");
 			    var image_holder = $(elt);
-			    //image_holder.empty();
 			    if (extn == "gif" || extn == "png" || extn == "jpg" || extn == "jpeg") {
 				    if (typeof(FileReader) != "undefined") {
 					    //loop for each file selected for uploaded.
@@ -66,14 +59,9 @@ $(document).ready(function(){
 					    {
 						    var reader = new FileReader();
 						    reader.onload = function(e) {
-                                //$("<img />", {
-								//    "src": e.target.result,
-								//    "class": "thumb-image"
-							    //}).appendTo(image_holder);
 							    $((image_holder).attr('src', e.target.result));
 							    $((image_holder).attr('srcset', e.target.result + " 1x, " + e.target.result + "2x" ));
 						    }
-						    //image_holder.show();
 						    reader.readAsDataURL($(this)[0].files[i]);
 					    }
 				    } else {
