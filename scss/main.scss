@@ -141,11 +141,7 @@ body {
 
     &:hover .js-edit__wrapper {
       display: table;
-      border-collapse: collapse;
-      border: 1px solid hue(teal, 70);
-      box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      -webkit-box-sizing: border-box;
+
 
     }
   }
@@ -172,12 +168,12 @@ body {
     width: 50%;
     text-align: center;
     height: 100%;
-    color: hue(teal, 90);
-    border: 1px solid hue(teal, 70);
-    background-color: rgba(hue(teal), 0.4);
+    color: hue(grey, 5);
+    background-color: rgba(hue(grey, 90), 0.5);
+    font-size: 24px;
 
     &:hover {
-      background-color: rgba(hue(teal), 0.7);
+      background-color: rgba(hue(grey, 90), 0.8);
     }
   }
 }
