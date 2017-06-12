@@ -17,7 +17,7 @@
         s.parentNode.insertBefore(wf, s);
     })(document);
 </script>
-<script src="../vendor/siroop/frontend/public/dist/js/default.min.js"></script>
-<script src="../vendor/siroop/frontend/public/dist/js/vendor.min.js"></script>
+<script src="/vendor/siroop/frontend/public/dist/js/default.min.js"></script>
+<script src="/vendor/siroop/frontend/public/dist/js/vendor.min.js"></script>
 </body>
 </html>
