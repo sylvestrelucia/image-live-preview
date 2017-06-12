@@ -13,17 +13,25 @@ $(document).ready(function(){
 
     function wrap_images() {
         $("img").wrap("<div class='js-edit__editor'></div>");
-        $(".js-edit__editor").prepend(editor);
+        $(".js-edit__editor").append(editor);
     }
     
     function display_hover() {
 
         $(".js-edit__editor").hover(function(){
             $(this).toggleClass("js-edit--hover");
+
+            var height = $(this).parent().outerHeight() - 1;
+            var width = $(this).parent().outerWidth();
+            $(this).find(".js-edit__wrapper").css({ "height": height});
+            $(this).find(".js-edit__wrapper").css({ "width": width});
         });
 
+
+
+
         $("img").mouseout(function(){
-            $(this).children(".js-edit__wrapper").remove();
+            $(this).find(".js-edit__wrapper").remove();
         });
     }
     
