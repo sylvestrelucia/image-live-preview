@@ -19,8 +19,9 @@ $(document).ready(function(){
         $(".js-edit__editor").hover(function(){
             $(this).toggleClass("js-edit--hover");
 
-            var height = $(this).parents("div").outerHeight();
-            var width = $(this).parents("div").outerWidth();
+            var height = $(this).parent().outerHeight();
+            var width = $(this).parent().outerWidth();
+            $(this).parent().css({ "position": "relative"});
             $(this).find(".js-edit__wrapper").css({ "height": height});
             $(this).find(".js-edit__wrapper").css({ "width": width});
         });

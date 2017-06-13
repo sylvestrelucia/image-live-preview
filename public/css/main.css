@@ -85,7 +85,8 @@ body {
   top: 0;
   bottom: 0;
   left: 0;
-  right: 0; }
+  right: 0;
+  z-index: 99999; }
   .js-edit__wrapper:hover {
     display: table; }
 
@@ -100,3 +101,6 @@ body {
   font-size: 24px; }
   .js-edit__upload:hover {
     background-color: rgba(19, 27, 32, 0.8); }
+
+.kvasir .m-banner__link-wrap:hover:after {
+  display: none; }
