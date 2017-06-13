@@ -9,30 +9,28 @@ $(document).ready(function(){
 		"<span class='js-edit__upload js-edit__upload--desktop'><i class='fa fa-desktop'></i></span>" +
 		"</div>";
 
-	function wrap_images() {
-		$("img").wrap("<div class='js-edit__editor'></div>");
-		$(".js-edit__editor").append(editor);
+	function wrap_image(e) {
+		$(e).wrap("<div class='js-edit__editor'></div>");
+		$(e).append(editor);
 	}
 
 	function display_hover() {
 
-		$(".js-edit__editor").hover(function(){
-			$(this).toggleClass("js-edit--hover");
+		$("img").hover(function() {
+			$(this).addClass("js-edit--hover");
 
-			$(this).parent().addClass("js-position-relative");
+			//wrap_image($(this));
+
+			$(this).after(editor);
 
 			var height = $(this).parent().outerHeight();
 			var width = $(this).parent().outerWidth();
+			$(this).parent().css({"position": "relative"});
+			$(this).parent().find(".js-edit__wrapper").css({"height": height});
+			$(this).parent().find(".js-edit__wrapper").css({"width": width});
 
-
-			$(this).find(".js-edit__wrapper").css({ "height": height});
-			$(this).find(".js-edit__wrapper").css({ "width": width});
 		});
 
-
-		$("img").mouseout(function(){
-			$(this).find(".js-edit__wrapper").remove();
-		});
 	}
 
 
@@ -47,7 +45,9 @@ $(document).ready(function(){
 
 		$(".js-fileUpload").on( "click", function() {
 
-			var elt = $(this).parents(".js-edit__editor").children("img");
+			var elt = $(this).parents(".js-edit__wrapper").prev("img");
+
+			elt.css({"opacity":"0.3"});
 
 			$(this).on('change', function() {
 
@@ -74,20 +74,23 @@ $(document).ready(function(){
 				} else {
 					alert("Pls select only images");
 				}
-
-				// Remove wrapper
-				$(this).parents(".js-edit__editor").parent().removeClass("js-position-relative");
-				$(this).parents(".js-edit__wrapper").unwrap();
-				$(this).parents(".js-edit__wrapper").remove();
 			});
-
 
 		});
 
 	}
 
+	function resolve_pointer() {
+		$("a").click(function(event){
+			event.preventDefault();
+		});
+	}
+
+
+
 	(function(){
-		wrap_images();
+		//resolve_pointer();
+		//wrap_images();
 		display_hover();
 		change_image();
 		//disable_links();

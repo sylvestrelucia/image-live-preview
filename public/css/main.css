@@ -73,6 +73,12 @@ body {
 .kvasir .m-teaser-item__link {
   height: auto !important; }
 
+form.c-search-global__form {
+  margin: 0; }
+
+.m-picture.js-position-relative {
+  position: inherit !important; }
+
 .js-edit__editor:hover .js-edit__wrapper {
   display: table; }
 
@@ -86,7 +92,8 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 99999; }
+  z-index: 99999;
+  min-width: 200px !important; }
   .js-edit__wrapper:hover {
     display: table; }
 
@@ -98,9 +105,13 @@ body {
   height: 100%;
   color: #eef3f7;
   background-color: rgba(19, 27, 32, 0.5);
-  font-size: 24px; }
+  font-size: 24px;
+  padding: 16px; }
   .js-edit__upload:hover {
     background-color: rgba(19, 27, 32, 0.8); }
+
+.js-position-relative {
+  position: relative; }
 
 .kvasir .m-banner__link-wrap:hover:after {
   display: none; }

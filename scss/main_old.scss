@@ -130,15 +130,6 @@ body {
   height: auto !important;
 }
 
-form.c-search-global__form {
-    margin: 0;
-}
-
-.m-picture.js-position-relative {
-  position: inherit !important;
-}
-
-
 //JS css
 
 .js-edit {
@@ -156,7 +147,7 @@ form.c-search-global__form {
   }
 
   &__wrapper {
-    display: none;
+    display: table;
     text-align: center;
     position: absolute;
     width: 100%;
@@ -166,33 +157,23 @@ form.c-search-global__form {
     left: 0;
     right: 0;
     z-index: 99999;
-    min-width: 200px !important;
-
-    &:hover {
-      display: table;
-    }
   }
 
   &__upload {
     display: table-cell;
     vertical-align: middle;
-    width: 50%;
+    //width: 50%;
+    width: 100%;
     text-align: center;
     height: 100%;
     color: hue(grey, 5);
     background-color: rgba(hue(grey, 90), 0.5);
     font-size: 24px;
-    padding: 16px;
-
 
     &:hover {
       background-color: rgba(hue(grey, 90), 0.8);
     }
   }
-}
-
-.js-position-relative {
-  position: relative;
 }
 
 // Fix for editing

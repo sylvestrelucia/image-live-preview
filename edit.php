@@ -31,8 +31,5 @@
     }
 ?>
 
-<input class="js-fileUpload" multiple="multiple" type="file"/>
-<div class="js-image-holder"></div>
-
 </body>
 </html>
