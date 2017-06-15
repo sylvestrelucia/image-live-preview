@@ -10,37 +10,36 @@ $(document).ready(function(){
 		"</div>";
 
 	function wrap_images() {
-		$("img").wrap("<div class='js-edit__editor'></div>");
+        $(".js-edit__editor").contents().unwrap();
+        $("img").wrap("<div class='js-edit__editor'></div>");
 		$(".js-edit__editor").append(editor);
 	}
 
 	function display_hover() {
-
 		$(".js-edit__editor").hover(function(){
 			$(this).toggleClass("js-edit--hover");
 
 			$(this).parent().addClass("js-position-relative");
 
-			var height = $(this).parent().outerHeight();
-			var width = $(this).parent().outerWidth();
-
+			if($(this).parent().outerWidth() < 200) {
+                var height = "auto";
+                var width = "100%";
+			} else {
+                var height = $(this).parent().outerHeight();
+                var width = $(this).parent().outerWidth();
+			}
 
 			$(this).find(".js-edit__wrapper").css({ "height": height});
 			$(this).find(".js-edit__wrapper").css({ "width": width});
 		});
-
 
 		$("img").mouseout(function(){
 			$(this).find(".js-edit__wrapper").remove();
 		});
 	}
 
-
-	function disable_links() {
-		$('a').click(function(e) {
-			e.preventDefault();
-			//do other stuff when a click happens
-		});
+	function content_editable() {
+        $("*").attr('contentEditable', 'true');
 	}
 
 	function change_image() {
@@ -72,7 +71,7 @@ $(document).ready(function(){
 						alert("This browser does not support FileReader.");
 					}
 				} else {
-					alert("Pls select only images");
+					alert("Please select only images");
 				}
 
 				// Remove wrapper
@@ -81,17 +80,15 @@ $(document).ready(function(){
 				$(this).parents(".js-edit__wrapper").remove();
 			});
 
-
 		});
 
 	}
 
 	(function(){
-		wrap_images();
-		display_hover();
-		change_image();
-		//disable_links();
-		console.log('Hello World!');
+        wrap_images();
+        display_hover();
+        change_image();
+        content_editable();
 	})();
 
 });

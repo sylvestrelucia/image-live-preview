@@ -1,6 +1,9 @@
 <?php require 'lib/copy.php'; ?>
+
 <?php
     $server_url = $_SERVER['HTTP_HOST'];
+    header('Access-Control-Allow-Origin: *');
+
 ?>
 
 <html>
